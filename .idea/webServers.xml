@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="c833523f-1f39-441f-838e-86c9e72e1d22" name="regton" url="http://212.38.162.223">
+        <fileTransfer host="212.38.162.223" port="22" rootFolder="/var/www/vhosts/regton.com/regton.dx3webs.com/" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

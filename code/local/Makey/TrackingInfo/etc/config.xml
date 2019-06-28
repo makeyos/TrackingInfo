@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<config>
+    <adminhtml>
+        <layout>
+            <updates>
+                <orderview>
+                    <file>makey/trackinginfo.xml</file>
+                </orderview>
+            </updates>
+        </layout>
+        <events>
+            <core_layout_block_create_after>
+                <observers>
+                    <makey_trackinginfo_add_columns>
+                        <class>Makey_TrackingInfo_Model_Observer</class>
+                        <method>addColumnsToGrid</method>
+                    </makey_trackinginfo_add_columns>
+                </observers>
+            </core_layout_block_create_after>
+            <sales_order_grid_collection_load_before>
+                <observers>
+                    <makey_trackinginfo_prepare_collection>
+                        <class>Makey_TrackingInfo_Model_Observer</class>
+                        <method>prepareOrderGridCollection</method>
+                    </makey_trackinginfo_prepare_collection>
+                </observers>
+            </sales_order_grid_collection_load_before>
+        </events>
+    </adminhtml>
+    <global>
+        <models>
+            <trackinginfo>
+                <class>Makey_TrackingInfo_Model</class>
+            </trackinginfo>
+        </models>
+    </global>
+    <crontab>
+        <jobs>
+            <makey_trackinginfo>
+                <schedule><cron_expr>30 9,14 * * 1-6</cron_expr></schedule>
+                <run><model>trackinginfo/observer::update_tracking</model></run>
+            </makey_trackinginfo>
+        </jobs>
+    </crontab>
+</config>

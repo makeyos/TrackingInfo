@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<layout>
+    <adminhtml_sales_order_view>
+        <reference name="order_info">
+            <action method="setTemplate">
+                <template>makey/sales/order/view/info.phtml</template>
+            </action>
+        </reference>
+		<reference name="order_tab_info">
+            <action method="setTemplate">
+                <template>makey/sales/order/view/tab/info.phtml</template>
+            </action>
+        </reference>
+    </adminhtml_sales_order_view>
+</layout>
