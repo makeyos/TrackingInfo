@@ -65,7 +65,6 @@ class Makey_TrackingInfo_Model_Observer
         $alldata =$readconnection->fetchOne($allrecord);
         echo $alldata;*/
 
-
     }
 
 }
